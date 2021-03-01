@@ -1207,3 +1207,17 @@ header span.menu-icon {
 .foot-link {
 	color: white;
 }
+
+.invalid{
+border:1px solid red ;
+background-image: url("./img/invalid.png") ;
+background-repeat: no-repeat;
+background-position-x: right;
+}
+
+
+
+.valid{
+	border:1px solid green ;
+	
+	}

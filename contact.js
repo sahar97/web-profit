@@ -1,50 +1,61 @@
 
+$(document).ready(function() {
+    $("#panel ").css("display", "none");
+  
+    $("#flip , #close").click(function() {
+        $("#panel").slideToggle("slow");
+    });
+  });
+  
 
-function Fun1() {
-    inputtxt = document.getElementById("firstName");
-  
+
+
+
+function Fun() {
+    var first_name = document.getElementById("firstName");
+    var last_name = document.getElementById("lastName").value;
+    var email = document.getElementById('email').value;
+    var numb = document.getElementById('numb').value;
+    var com_name = document.getElementById("comName").value;
+    var com_web = document.getElementById('comWeb').value;
+    var j_title = document.getElementById('job').value;
+    var size = document.getElementById('select').value;
     var letters = /^[a-zA-Z]+$/;
-    if (inputtxt.value.match(letters)) {
-        document.getElementById('firstName').style.border = "1px solid black"
-        document.getElementById('firstName').style.backgroundImage = "none";
-  
+    var e_patt = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
+    var n_patt = new RegExp("[0][0-9]{9}");
+    var urlRegex = /https?:\/\/[^\s]/;
+
+
+
+//check the first name 
+    if (first_name.value.match(letters)) {
+        first_name.classList.remove("invalid");
+    } else {
+        first_name.classList.add("invalid");
+
+    }
+
+//check the last name 
+
+    if (last_name.value.match(letters)) {
+        last_name.classList.remove("invalid");
+
         return true;
     } else {
-        document.getElementById('firstName').style.border = "1px solid red"
-        document.getElementById('firstName').style.backgroundImage = "url('./img/invalid.png')";
-        document.getElementById('firstName').style.backgroundRepeat = "no-repeat";
-        document.getElementById('firstName').style.backgroundPosition = "right";
-  
+        first_name.classList.add("invalid");
+
+
         return false;
     }
-  }
+
+  }//end of the function 
   
-  
-  function Fun2() {
-    inputtxt = document.getElementById("lastName");
-  
-    var letters = /^[a-zA-Z]+$/;
-    if (inputtxt.value.match(letters)) {
-        document.getElementById('lastName').style.border = "1px solid black"
-        document.getElementById('lastName').style.backgroundImage = "none";
-  
-        return true;
-    } else {
-        document.getElementById('lastName').style.border = "1px solid red"
-        document.getElementById('lastName').style.backgroundImage = "url('./img/invalid.png')";
-        document.getElementById('lastName').style.backgroundRepeat = "no-repeat";
-        document.getElementById('lastName').style.backgroundPosition = "right";
-  
-        return false;
-    }
-  }
   
   
   
   
   function Fun3() {
     var email = document.getElementById('email').value;
-    var patt = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
     var res = patt.test(email);
   
     if (!res) {
@@ -66,7 +77,6 @@ function Fun1() {
   
   function Fun4() {
     var numb = document.getElementById('numb').value;
-    var patt = new RegExp("[0][0-9]{9}");
   
     var res = patt.test(numb);
   
@@ -109,7 +119,6 @@ function Fun1() {
   function Fun6() {
     var inputtxt = document.getElementById('comWeb').value;
   
-    var urlRegex = /https?:\/\/[^\s]/;
   
   
   
