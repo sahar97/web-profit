@@ -117,8 +117,54 @@ else{
 
 break; 
 
+
+
+
+
+
+
+
+
+
+    
+
+
+case 7:
+  
+    if (j_title.value =="" || j_title.value ==null){
+        j_title.classList.add('invalid');
+    }
+
+    else {    j_title.classList.remove('invalid')
+}
+break; 
+
+
+
+
+
+
+
+case 8:
+  
+    if ($("#select")[0].selectedIndex <= 0) {
+        $("#select").addClass("invalid");
+
+  
+  
+    } else {
+        $("#select").removeClass("invalid");
+
+    }
+
+break;
+
     }
 }
+
+
+
+
 
 /*
 function Fun() {
