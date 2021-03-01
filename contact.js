@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 
 
-function Fun(event) {
+function Fun() {
     
     var first_name = document.getElementById("firstName");
     var last_name = document.getElementById("lastName");
@@ -27,27 +27,11 @@ function Fun(event) {
     var urlRegex = /https?:\/\/[^\s]/;
 
 
-    if(first_name.blur)
-{
-    if (!(first_name.value.match(letters))) {
-        first_name.classList.add("invalid");
-        return true ;}
-        else{
-            first_name.classList.remove("invalid");
+    window.onkeyup = e => {
+        console.log(e.target);  // to get the element
+        console.log(e.target.tagName);  // to get the element tag name alone
+    } 
 
-        }
-}
-else if(last_name.blur){
-    if (!(last_name.value.match(letters))) {
-        last_name.classList.add("invalid");
-        return true ;}
-        else{
-            last_name.classList.remove("invalid");
-
-        }
-
-      alert("butm no click ")
-}
 }
 /*
 //check the first name 
